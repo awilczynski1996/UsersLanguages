@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Languages List{% endblock %}
+
+{% block body %}
+
+    {% if data %}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Język Programowania</th>
+                <th>Ile osób programuje w danym języku</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for language in data %}
+                <tr>
+                    <td>{{ language.name }}</td>
+                    <td>{{ language.count }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+
+    {% endif %}
+
+{% endblock %}
